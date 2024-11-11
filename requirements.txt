@@ -1,0 +1,8 @@
+streamlit
+pandas
+llama-index
+langchain
+matplotlib
+PyPDF2
+python-docx
+pdfplumber
