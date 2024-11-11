@@ -6,4 +6,3 @@ pdfplumber
 PyPDF2
 python-docx
 matplotlib
-
