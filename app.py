@@ -1,5 +1,17 @@
-import pandas as pd
+import os
+import subprocess
 import streamlit as st
+
+# Run the setup.sh script
+if not os.path.isfile('setup_done'):
+    subprocess.run(['./setup.sh'])
+    with open('setup_done', 'w') as f:
+        f.write('setup done')
+
+# Your existing Streamlit code
+# ...
+
+import pandas as pd
 from llama_index.experimental.query_engine.pandas import PandasQueryEngine
 from langchain_community.llms import Ollama
 from io import BytesIO
@@ -7,7 +19,6 @@ import matplotlib.pyplot as plt
 from PyPDF2 import PdfReader
 from docx import Document
 import pdfplumber
-
 
 # Streamlit App Layout
 st.title("Dynamic Document Query Engine")
