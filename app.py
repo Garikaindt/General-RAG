@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from PyPDF2 import PdfReader
 from docx import Document
 import pdfplumber
-import openai
+
 
 # Streamlit App Layout
 st.title("Dynamic Document Query Engine")
