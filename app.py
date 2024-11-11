@@ -1,8 +1,8 @@
-import subprocess
 import os
+import subprocess
 import streamlit as st
 
-# Run the setup.py script
+# Ensure setup.py runs to install all dependencies
 if not os.path.isfile('setup_done'):
     subprocess.run(['python', 'setup.py'])
     with open('setup_done', 'w') as f:
@@ -128,3 +128,4 @@ if uploaded_file is not None:
                     st.warning("Please enter a question.")
 else:
     st.info("Please upload a CSV, Excel, PDF, or Word file to get started.")
+
