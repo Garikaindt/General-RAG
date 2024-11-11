@@ -1,10 +1,9 @@
-from pip._internal import main as pip_main
+import os
+import subprocess
 
-def install_packages_from_requirements(file_path):
-    with open(file_path, 'r') as file:
-        for line in file:
-            if line.strip() and not line.startswith('#'):
-                pip_main(['install', line.strip()])
+def install_packages():
+    subprocess.check_call(["pip", "install", "-r", "requirements.txt"])
+    subprocess.check_call(["pip", "install", "-r", "post-install.txt"])
 
-if __name__ == '__main__':
-    install_packages_from_requirements('post-install.txt')
+if __name__ == "__main__":
+    install_packages()
