@@ -1,8 +1,8 @@
 streamlit
 pandas
-llama-index
-langchain
-matplotlib
+llama_index
+langchain_community
+pdfplumber
 PyPDF2
 python-docx
-pdfplumber
+matplotlib
