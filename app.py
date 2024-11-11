@@ -1,16 +1,17 @@
-import os
 import subprocess
+import os
 import streamlit as st
 
-# Ensure setup.py runs to install all dependencies
+# Ensure setup.sh is executable
+subprocess.run(['chmod', '+x', 'setup.sh'])
+
+# Run the setup.sh script if not already done
 if not os.path.isfile('setup_done'):
-    subprocess.run(['python', 'setup.py'])
+    subprocess.run(['./setup.sh'])
     with open('setup_done', 'w') as f:
         f.write('setup done')
 
-# Your existing Streamlit code
-# ...
-
+# Your existing Streamlit code...
 import pandas as pd
 from llama_index.experimental.query_engine.pandas import PandasQueryEngine
 from langchain_community.llms import Ollama
@@ -128,4 +129,3 @@ if uploaded_file is not None:
                     st.warning("Please enter a question.")
 else:
     st.info("Please upload a CSV, Excel, PDF, or Word file to get started.")
-
