@@ -1,10 +1,10 @@
-import os
 import subprocess
+import os
 import streamlit as st
 
-# Run the setup.sh script
+# Run the setup.py script
 if not os.path.isfile('setup_done'):
-    subprocess.run(['./setup.sh'])
+    subprocess.run(['python', 'setup.py'])
     with open('setup_done', 'w') as f:
         f.write('setup done')
 
