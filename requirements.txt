@@ -6,3 +6,5 @@ pdfplumber
 PyPDF2
 python-docx
 matplotlib
+git+https://github.com/jerryjliu/llama_index.git
+git+https://github.com/langchain-ai/langchain-community.git
